@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://bettermike.com/"/>
-  <updated>2015-05-24T06:53:33.090Z</updated>
+  <updated>2015-05-24T07:02:50.520Z</updated>
   <id>http://bettermike.com/</id>
   
   <author>
@@ -19,13 +19,17 @@
     <link href="http://bettermike.com/2015/05/24/My-present-situation/"/>
     <id>http://bettermike.com/2015/05/24/My-present-situation/</id>
     <published>2015-05-24T06:51:00.000Z</published>
-    <updated>2015-05-24T06:53:33.090Z</updated>
+    <updated>2015-05-24T07:02:50.520Z</updated>
     <content type="html"><![CDATA[<p>My Name is Mike.</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>My Name is Mike.</p>
 ]]>
     </summary>
+    
+      <category term="diary" scheme="http://bettermike.com/tags/diary/"/>
+    
+      <category term="life" scheme="http://bettermike.com/tags/life/"/>
     
   </entry>
   
