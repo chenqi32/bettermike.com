@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://bettermike.com/"/>
-  <updated>2015-05-26T15:04:23.390Z</updated>
+  <updated>2015-06-08T16:22:18.215Z</updated>
   <id>http://bettermike.com/</id>
   
   <author>
@@ -13,6 +13,19 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Find a job]]></title>
+    <link href="http://bettermike.com/2015/06/09/Find-a-job/"/>
+    <id>http://bettermike.com/2015/06/09/Find-a-job/</id>
+    <published>2015-06-08T16:22:16.000Z</published>
+    <updated>2015-06-08T16:22:18.215Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Don't worry]]></title>
