@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://bettermike.com/"/>
-  <updated>2015-06-09T00:25:07.441Z</updated>
+  <updated>2015-06-09T17:11:51.334Z</updated>
   <id>http://bettermike.com/</id>
   
   <author>
@@ -15,11 +15,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[choice]]></title>
+    <link href="http://bettermike.com/2015/06/10/choice/"/>
+    <id>http://bettermike.com/2015/06/10/choice/</id>
+    <published>2015-06-09T16:52:11.000Z</published>
+    <updated>2015-06-09T17:11:51.334Z</updated>
+    <content type="html"><![CDATA[<p>Up to now,I have three choices,such as offer of HeXun,offer of WeiJIn,stay in ebaotech.</p>
+<p>1.In HeXun, I have a good friend in Hexun. He told me he will instead of CTO in the end of July.But I believe it is not easy.Perhaps I can wait it.</p>
+<p>2.In WeiJin,I got an offer with 22000 Yuan/month/ 16000 (after taxes)</p>
+<p>3.Last option is I can continue stay in ebaotech.I can get 18000-20000. but it isn’t sustainable.</p>
+<p>In the case,obviously, 2&gt;3.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Up to now,I have three choices,such as offer of HeXun,offer of WeiJIn,stay in ebaotech.</p>
+<p>1.In HeXun, I have a good friend in Hexun.]]>
+    </summary>
+    
+      <category term="diary" scheme="http://bettermike.com/tags/diary/"/>
+    
+      <category term="life" scheme="http://bettermike.com/tags/life/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Find a job]]></title>
     <link href="http://bettermike.com/2015/06/09/Find-a-job/"/>
     <id>http://bettermike.com/2015/06/09/Find-a-job/</id>
     <published>2015-06-08T16:22:16.000Z</published>
-    <updated>2015-06-09T00:25:07.441Z</updated>
+    <updated>2015-06-09T16:48:06.526Z</updated>
     <content type="html"><![CDATA[<p>Calm down,Today I will attend an important interview.If If all things go well,my salary will be increased to 25000 Yuan/Month.This is a challenge for me,but I can win.I will keep my groove to get it.<br>Inner confidence is a strength.I believe god,god will give the best result.</p>
 <blockquote>
 <p>Do the best people can ,As far as personnel, listen to heaven.</p>
@@ -29,7 +52,9 @@
     <![CDATA[<p>Calm down,Today I will attend an important interview.If If all things go well,my salary will be increased to 25000 Yuan/Month.This is a c]]>
     </summary>
     
-      <category term="-diary -life" scheme="http://bettermike.com/tags/diary-life/"/>
+      <category term="diary" scheme="http://bettermike.com/tags/diary/"/>
+    
+      <category term="life" scheme="http://bettermike.com/tags/life/"/>
     
   </entry>
   
@@ -38,7 +63,7 @@
     <link href="http://bettermike.com/2015/05/26/Don-t-worry/"/>
     <id>http://bettermike.com/2015/05/26/Don-t-worry/</id>
     <published>2015-05-26T14:45:08.000Z</published>
-    <updated>2015-05-26T15:04:23.390Z</updated>
+    <updated>2015-06-09T16:48:07.293Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>Everything is fine.Trust me.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  -Your god .</p>
 </blockquote>
@@ -61,7 +86,9 @@
 <p>Everything is fine.Trust me.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]]>
     </summary>
     
-      <category term="-diary -life" scheme="http://bettermike.com/tags/diary-life/"/>
+      <category term="diary" scheme="http://bettermike.com/tags/diary/"/>
+    
+      <category term="life" scheme="http://bettermike.com/tags/life/"/>
     
   </entry>
   
