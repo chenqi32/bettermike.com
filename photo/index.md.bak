@@ -1,9 +1,50 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta charset="utf-8">
+  <meta name="baidu-site-verification" content="cIIuMBbUzY" />
+  <meta name="google-site-verification" content="ch6A-raPdVcOpcWalixde3LFnIYjj-Cu_OT0aro_SRo" />
+  
+  <title>BetterMike</title>
+  <meta name="author" content="Mike Chen">
+  
+  <meta name="description" content="Why do you like to make you better?">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="BetterMike"/>
+
+    <meta property="og:image" content="undefined"/>
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="BetterMike" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
 <title>Mike's Album</title>
 </head>
 <body bgcolor="#d0d0cc" align="center">
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">BetterMike</a></h1>
+  <h2><a href="/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+      <li><a href="/atom.xml">Rss</a></li>
+    
+      <li><a href="/aboutMe">About Me</a></li>
+    
+      <li><a href="/photo">Photo</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+
 <!-- saved from url=(0013)about:internet -->
 <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="810" height="720" id="test" align="middle">
 <param name="allowScriptAccess" value="sameDomain" />
