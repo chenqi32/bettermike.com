@@ -1,6 +1,7 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-<meta charset="utf-8">
+  <meta charset="utf-8">
   <meta name="baidu-site-verification" content="cIIuMBbUzY" />
   <meta name="google-site-verification" content="ch6A-raPdVcOpcWalixde3LFnIYjj-Cu_OT0aro_SRo" />
   
@@ -15,15 +16,20 @@
   
   <meta property="og:site_name" content="BetterMike"/>
 
+  
     <meta property="og:image" content="undefined"/>
+  
+
   <link href="/favicon.png" rel="icon">
   <link rel="alternate" href="/atom.xml" title="BetterMike" type="application/atom+xml">
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
-<title>Mike's Album</title>
+
 </head>
-<body bgcolor="#d0d0cc" align="center">
+
+
+<body>
   <header id="header" class="inner"><div class="alignleft">
   <h1><a href="/">BetterMike</a></h1>
   <h2><a href="/"></a></h2>
@@ -44,11 +50,56 @@
   </ul>
   <div class="clearfix"></div>
 </nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper">
+
 
 <!-- saved from url=(0013)about:internet -->
 <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="810" height="720" id="test" align="middle">
 <param name="allowScriptAccess" value="sameDomain" />
 <param name="movie" value="gallery.swf" /><param name="quality" value="high" /><param name="bgcolor" value="#d0d0cc" /><embed src="gallery.swf" quality="high" bgcolor="#d0d0cc" width="810" height="720" name="gallery" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
 </object>
+
+
+</div></div>
+    
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 Mike Chen
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"bettermike"};
+        (function() {
+                var ds = document.createElement('script');
+                ds.type = 'text/javascript';ds.async = true;
+                ds.src = 'http://static.duoshuo.com/embed.js';
+                ds.charset = 'UTF-8';
+                (document.getElementsByTagName('head')[0]
+                || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+</script>
 </body>
 </html>
+
