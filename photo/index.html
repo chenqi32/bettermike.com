@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="cIIuMBbUzY" />
+  <meta name="google-site-verification" content="ch6A-raPdVcOpcWalixde3LFnIYjj-Cu_OT0aro_SRo" />
+  
+  <title>BetterMike</title>
+  <meta name="author" content="Mike Chen">
+  
+  <meta name="description" content="Why do you like to make you better?">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="BetterMike"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="BetterMike" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">BetterMike</a></h1>
+  <h2><a href="/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+      <li><a href="/atom.xml">Rss</a></li>
+    
+      <li><a href="/aboutMe">About Me</a></li>
+    
+      <li><a href="/photo">Photo</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="page">
+  
+  <div class="post-content">
+    <header>
+      
+      
+  
+    <h1 class="title"></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>&lt;!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Strict//EN” “<a href="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;" target="_blank" rel="external">http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;</a></p>
+<html><br>    <head><br>        <title>Mike Chen’s Image Gallery</title><br>        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><br>        <meta name="description" content="Full Page Image Gallery with jQuery - with scollable thumbnails and full screen preview"><br>        <meta name="keywords" content="image gallery, jquery, full page, full screen, css3, auto scroll, scrollable, fancy, photography, portfolio"><br>        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"><br>        <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"><br>        <style><br>            span.reference{<br>                font-family:Arial;<br>                position:fixed;<br>                right:10px;<br>                top:10px;<br>                font-size:10px;<br>            }<br>            span.reference a{<br>                color:#fff;<br>                text-transform:uppercase;<br>                text-decoration:none;<br>                text-shadow:1px 1px 1px #000;<br>                margin-left:20px;<br>            }<br>            span.reference a:hover{<br>                color:#ddd;<br>            }<br>            h1.title{<br>                width:919px;<br>                height:148px;<br>                position:fixed;<br>                top:10px;<br>                left:10px;<br>                text-indent:-9000px;<br>                background:transparent url(images/icons/title.png) no-repeat top left;<br>                z-index:2;<br>            }<br>        </style><br>        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script><br>        <script type="text/javascript" src="jquery.easing.1.3.js"></script><br>        <script type="text/javascript"><br>            $(window).load(function() {<br>                sliderLeft=$(‘#thumbScroller .container’).position().left;<br>                padding=$(‘#outer_container’).css(‘paddingRight’).replace(“px”, “”);<br>                sliderWidth=$(window).width()-padding;<br>                $(‘#thumbScroller’).css(‘width’,sliderWidth);<br>                var totalContent=0;<br>                $(‘#thumbScroller .content’).each(function () {<br>                    totalContent+=$(this).innerWidth();<br>                    $(‘#thumbScroller .container’).css(‘width’,totalContent);<br>                });<br>                $(‘#thumbScroller’).mousemove(function(e){<br>                    if($(‘#thumbScroller  .container’).width()&gt;sliderWidth){<br>                        var mouseCoords=(e.pageX - this.offsetLeft);<br>                        var mousePercentX=mouseCoords/sliderWidth;<br>                        var destX=-(((totalContent-(sliderWidth))-sliderWidth)<em>(mousePercentX));<br>                        var thePosA=mouseCoords-destX;<br>                        var thePosB=destX-mouseCoords;<br>                        var animSpeed=600; //ease amount<br>                        var easeType=’easeOutCirc’;<br>                        if(mouseCoords==destX){<br>                            $(‘#thumbScroller .container’).stop();<br>                        }<br>                        else if(mouseCoords&gt;destX){<br>                            //$(‘#thumbScroller .container’).css(‘left’,-thePosA); //without easing<br>                            $(‘#thumbScroller .container’).stop().animate({left: -thePosA}, animSpeed,easeType); //with easing<br>                        }<br>                        else if(mouseCoords<destX){
+                            //$('#thumbScroller .container').css('left',thePosB); //without easing
+                            $('#thumbScroller .container').stop().animate({left: thePosB}, animSpeed,easeType); //with easing
+                        }
+                    }
+                });
+                $('#thumbScroller  .thumb').each(function () {
+                    $(this).fadeTo(fadeSpeed, 0.6);
+                });
+                var fadeSpeed=200;
+                $('#thumbScroller .thumb').hover(
+                function(){ //mouse over
+                    $(this).fadeTo(fadeSpeed, 1);
+                },
+                function(){ //mouse out
+                    $(this).fadeTo(fadeSpeed, 0.6);
+                }
+            );
+            });
+            $(window).resize(function() {
+                //$('#thumbScroller .container').css('left',sliderLeft); //without easing
+                $('#thumbScroller .container').stop().animate({left: sliderLeft}, 400,'easeOutCirc'); //with easing
+                $('#thumbScroller').css('width',$(window).width()-padding);
+                sliderWidth=$(window).width()-padding;
+            });
+        </script><br>    </head><br><br>    <body><br>        <h1 class="title">Mark Sebastian - Full Page Image Gallery with jQuery</h1><br>        <div id="fp_gallery" class="fp_gallery"><br>            <img src="images/1.jpg" alt="" class="fp_preview" style="display:none;"><br>            <div class="fp_overlay"></div><br>            <div id="fp_loading" class="fp_loading"></div><br>            <div id="fp_next" class="fp_next"></div><br>            <div id="fp_prev" class="fp_prev"></div><br>            <div id="outer_container"><br>                <div id="thumbScroller"><br>                    <div class="container"><br>                        <div class="content"><br>                            <div><a href="#"><img src="images/thumbs/1.jpg" alt="images/1.jpg" class="thumb"></a></div><br>                        </div><br>                        <div class="content"><br>                            <div><a href="#"><img src="images/thumbs/2.jpg" alt="images/2.jpg" class="thumb"></a></div><br>                        </div><br>                        <div class="content"><br>                            <div><a href="#"><img src="images/thumbs/3.jpg" alt="images/3.jpg" class="thumb"></a></div><br>                        </div><br>                        <div class="content"><br>                            <div><a href="#"><img src="images/thumbs/4.jpg" alt="images/4.jpg" class="thumb"></a></div><br>                        </div><br>                        <div class="content"><br>                            <div><a href="#"><img src="images/thumbs/5.jpg" alt="images/5.jpg" class="thumb"></a></div><br>                        </div><br><br>                    </div><br>                </div><br>            </div><br>            <div id="fp_thumbtoggle" class="fp_thumbtoggle">View Thumbs</div><br>        </div><br>        <div><br>            <span class="reference"><br>                <a href="http://tympanus.net/codrops/2010/09/08/full-page-image-gallery/" target="_blank" rel="external">back to the Codrops tutorial</a><br>                <a href="http://www.flickr.com/photos/markjsebastian/" target="_blank" rel="external">Photos by Mark Sebastian</a><br>            </span><br>        </div><br><br>        <!-- The JavaScript --><br><br>        <script type="text/javascript"><br>            $(function() {<br>                //current thumb’s index being viewed<br>                var current            = -1;<br>                //cache some elements<br>                var $btn_thumbs = $(‘#fp_thumbtoggle’);<br>                var $loader        = $(‘#fp_loading’);<br>                var $btn_next        = $(‘#fp_next’);<br>                var $btn_prev        = $(‘#fp_prev’);<br>                var $thumbScroller    = $(‘#thumbScroller’);<br><br>                //total number of thumbs<br>                var nmb_thumbs        = $thumbScroller.find(‘.content’).length;<br><br>                //preload thumbs<br>                var cnt_thumbs         = 0;<br>                for(var i=0;i&lt;nmb_thumbs;++i){<br>                    var $thumb = $thumbScroller.find(‘.content:nth-child(‘+parseInt(i+1)+’)’);<br>                    $(‘<img/>‘).load(function(){<br>                        ++cnt_thumbs;<br>                        if(cnt_thumbs == nmb_thumbs)<br>                //display the thumbs on the bottom of the page<br>                showThumbs(2000);<br>                    }).attr(‘src’,$thumb.find(‘img’).attr(‘src’));<br>                }<br><br><br>                //make the document scrollable<br>                //when the the mouse is moved up/down<br>                //the user will be able to see the full image<br>                makeScrollable();<br><br>                //clicking on a thumb…<br>                $thumbScroller.find(‘.content’).bind(‘click’,function(e){<br>                    var $content= $(this);<br>                    var $elem     = $content.find(‘img’);<br>                    //keep track of the current clicked thumb<br>                    //it will be used for the navigation arrows<br>                    current     = $content.index()+1;<br>                    //get the positions of the clicked thumb<br>                    var pos_left     = $elem.offset().left;<br>                    var pos_top     = $elem.offset().top;<br>                    //clone the thumb and place<br>                    //the clone on the top of it<br>                    var $clone     = $elem.clone()<br>                    .addClass(‘clone’)<br>                    .css({<br>                        ‘position’:’fixed’,<br>                        ‘left’: pos_left + ‘px’,<br>                        ‘top’: pos_top + ‘px’<br>                    }).insertAfter($(‘BODY’));<br><br>                    var windowW = $(window).width();<br>                    var windowH = $(window).height();<br><br>                    //animate the clone to the center of the page<br>                    $clone.stop()<br>                    .animate({<br>                        ‘left’: windowW/2 + ‘px’,<br>                        ‘top’: windowH/2 + ‘px’,<br>                        ‘margin-left’ :-$clone.width()/2 -5 + ‘px’,<br>                        ‘margin-top’: -$clone.height()/2 -5 + ‘px’<br>                    },500,<br>                    function(){<br>                        var $theClone     = $(this);<br>                        var ratio        = $clone.width()/120;<br>                        var final_w        = 400</em>ratio;<br><br>                        $loader.show();<br><br>                        //expand the clone when large image is loaded<br>                        $(‘<img class="fp_preview"/>‘).load(function(){<br>                            var $newimg         = $(this);<br>                            var $currImage     = $(‘#fp_gallery’).children(‘img:first’);<br>                            $newimg.insertBefore($currImage);<br>                            $loader.hide();<br>                            //expand clone<br>                            $theClone.animate({<br>                                ‘opacity’        : 0,<br>                                ‘top’            : windowH/2 + ‘px’,<br>                                ‘left’            : windowW/2 + ‘px’,<br>                                ‘margin-top’    : ‘-200px’,<br>                                ‘margin-left’    : -final_w/2 + ‘px’,<br>                                ‘width’            : final_w + ‘px’,<br>                                ‘height’        : ‘400px’<br>                            },1000,function(){$(this).remove();});<br>                            //now we have two large images on the page<br>                            //fadeOut the old one so that the new one gets shown<br>                            $currImage.fadeOut(2000,function(){<br>                                $(this).remove();<br>                            });<br>                            //show the navigation arrows<br>                            showNav();<br>                        }).attr(‘src’,$elem.attr(‘alt’));<br>                    });<br>                    //hide the thumbs container<br>                    hideThumbs();<br>                    e.preventDefault();<br>                });<br><br>                //clicking on the “show thumbs”<br>                //displays the thumbs container and hides<br>                //the navigation arrows<br>                $btn_thumbs.bind(‘click’,function(){<br>                    showThumbs(500);<br>                    hideNav();<br>                });<br><br>                function hideThumbs(){<br>                    $(‘#outer_container’).stop().animate({‘bottom’:’-160px’},500);<br>                    showThumbsBtn();<br>                }<br><br>                function showThumbs(speed){<br>                    $(‘#outer_container’).stop().animate({‘bottom’:’0px’},speed);<br>                    hideThumbsBtn();<br>                }<br><br>                function hideThumbsBtn(){<br>                    $btn_thumbs.stop().animate({‘bottom’:’-50px’},500);<br>                }<br><br>                function showThumbsBtn(){<br>                    $btn_thumbs.stop().animate({‘bottom’:’0px’},500);<br>                }<br><br>                function hideNav(){<br>                    $btn_next.stop().animate({‘right’:’-50px’},500);<br>                    $btn_prev.stop().animate({‘left’:’-50px’},500);<br>                }<br><br>                function showNav(){<br>                    $btn_next.stop().animate({‘right’:’0px’},500);<br>                    $btn_prev.stop().animate({‘left’:’0px’},500);<br>                }<br><br>                //events for navigating through the set of images<br>                $btn_next.bind(‘click’,showNext);<br>                $btn_prev.bind(‘click’,showPrev);<br><br>                //the aim is to load the new image,<br>                //place it before the old one and fadeOut the old one<br>                //we use the current variable to keep track which<br>                //image comes next / before<br>                function showNext(){<br>                    ++current;<br>                    var $e_next    = $thumbScroller.find(‘.content:nth-child(‘+current+’)’);<br>                    if($e_next.length == 0){<br>                        current = 1;<br>                        $e_next    = $thumbScroller.find(‘.content:nth-child(‘+current+’)’);<br>                    }<br>                    $loader.show();<br>                    $(‘<img class="fp_preview"/>‘).load(function(){<br>                        var $newimg         = $(this);<br>                        var $currImage         = $(‘#fp_gallery’).children(‘img:first’);<br>                        $newimg.insertBefore($currImage);<br>                        $loader.hide();<br>                        $currImage.fadeOut(2000,function(){$(this).remove();});<br>                    }).attr(‘src’,$e_next.find(‘img’).attr(‘alt’));<br>                }<br><br>                function showPrev(){<br>                    —current;<br>                    var $e_next    = $thumbScroller.find(‘.content:nth-child(‘+current+’)’);<br>                    if($e_next.length == 0){<br>                        current = nmb_thumbs;<br>                        $e_next    = $thumbScroller.find(‘.content:nth-child(‘+current+’)’);<br>                    }<br>                    $loader.show();<br>                    $(‘<img class="fp_preview"/>‘).load(function(){<br>                        var $newimg         = $(this);<br>                        var $currImage         = $(‘#fp_gallery’).children(‘img:first’);<br>                        $newimg.insertBefore($currImage);<br>                        $loader.hide();<br>                        $currImage.fadeOut(2000,function(){$(this).remove();});<br>                    }).attr(‘src’,$e_next.find(‘img’).attr(‘alt’));<br>                }<br><br>                function makeScrollable(){<br>                    $(document).bind(‘mousemove’,function(e){<br>                        var top = (e.pageY - $(document).scrollTop()/2) ;<br>                        $(document).scrollTop(top);<br>                    });<br>                }<br>            });<br>        </script><br>    </body><br></html>
+      
+    </div>
+    <footer>
+      
+        
+        
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+        <div class="ds-thread" data-thread-key="photo/index.html"></div>
+
+
+<section id="comment">
+  <h1 class="title">Kommentare</h1>
+
+  
+      <div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123456789012345";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="fb-comments" data-href="http://bettermike.com/photo/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+      
+  
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Suche">
+    <input type="hidden" name="q" value="site:bettermike.com">
+  </form>
+</div>
+
+  
+
+  
+<div class="widget tag">
+  <h3 class="title">Tags</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/diary/">diary</a><small>6</small></li>
+  
+    <li><a href="/tags/life/">life</a><small>6</small></li>
+  
+    <li><a href="/tags/psychology/">psychology</a><small>1</small></li>
+  
+    <li><a href="/tags/曾国藩/">曾国藩</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 Mike Chen
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"bettermike"};
+        (function() {
+                var ds = document.createElement('script');
+                ds.type = 'text/javascript';ds.async = true;
+                ds.src = 'http://static.duoshuo.com/embed.js';
+                ds.charset = 'UTF-8';
+                (document.getElementsByTagName('head')[0]
+                || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+</script>
+</body>
+</html>
