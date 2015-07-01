@@ -3,6 +3,7 @@
   <meta charset="utf-8">
   <title>BetterMike</title>
   <link href="/favicon.png" rel="icon">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">  
 </head>
 <body>
  <li><a href="/">Home</a>&nbsp;&nbsp;<a href="/archives">Archives</a>&nbsp;&nbsp;<a href="/atom.xml">Rss</a>&nbsp;&nbsp;<a href="/aboutMe">About Me</a></li
