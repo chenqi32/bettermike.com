@@ -1,0 +1,222 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="cIIuMBbUzY" />
+  <meta name="google-site-verification" content="ch6A-raPdVcOpcWalixde3LFnIYjj-Cu_OT0aro_SRo" />
+  
+  <title>OJDBC版本区别 [ojdbc14.jar，ojdbc5.jar和ojdbc6.jar的区别] | BetterMike</title>
+  <meta name="author" content="Mike Chen">
+  
+  <meta name="description" content="Why do you like to make you better?">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="OJDBC版本区别 [ojdbc14.jar，ojdbc5.jar和ojdbc6.jar的区别]"/>
+  <meta property="og:site_name" content="BetterMike"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="BetterMike" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">BetterMike</a></h1>
+  <h2><a href="/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+      <li><a href="/atom.xml">Rss</a></li>
+    
+      <li><a href="/aboutMe">About Me</a></li>
+    
+      <li><a href="/photo">Photo</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-06-09T16:52:11.000Z"><a href="/2015/06/10/OJDBC版本区别/">2015-06-10</a></time>
+      
+      
+  
+    <h1 class="title">OJDBC版本区别 [ojdbc14.jar，ojdbc5.jar和ojdbc6.jar的区别]</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>在使用Oracle JDBC驱动时，有些问题你是不是通过替换不同版本的Oracle  JDBC驱动来解决的？最常使用的ojdbc14.jar有多个版本，classes12.jar有多个版本你了解吗？</p>
+<p>连接类型：<br>1、JDBC OCI： oci是oracle call interface的缩写，此驱动类似于传统的ODBC 驱动。因为它需要Oracle Call Interface and Net8，所以它需要在运行使用此驱动的JAVA程序的机器上安装客户端软件，其实主要是用到orcale客户端里以dll方式提供的oci和服务器配 置。<br>2、JDBC Thin： thin是for thin client的意思，这种驱动一般用在运行在WEB浏览器中的JAVA程序。它不是通过OCI or Net8，而是通过Java sockets进行通信，是纯java实现的驱动，因此不需要在使用JDBC Thin的客户端机器上安装orcale客户端软件，所以有很好的移植性，通常用在web开发中。</p>
+<hr>
+<p>随Oracle 8i发布的Oracle JDBC驱动8.1.7版本<br>classes111.zip 适用于JDK 1.1.x<br>classes12.zip  适用于JDK 1.2.x<br>只有zip文件，无jar文件。</p>
+<hr>
+<p>随Oracle 9i发布的Oracle JDBC驱动9.2.0版本</p>
+<p>classes111.jar  适用于JDK 1.1.x<br>classes12.jar   适用于JDK 1.2 and JDK 1.3 （我的项目环境JDK1.6，oracle 10g，windows，用了这个目前没发现问题）<br>ojdbc14.jar     适用于JDK 1.4<br>classes111.zip  适用于JDK 1.1.x<br>classes12.zip   适用于JDK 1.2.x<br><em>*</em>_g.jar 只是用javac -g编译，生成所有调试信息，其它全一样</p>
+<p>新特性：<br>1、Thin连接类型的驱动对BFILE，BLOB，CLOB 提供直接支持，以前通常是调用PL/SQL来实现。<br>2、支持JDBC 3.0 特性<br>3、ojdbc14.jar 支持JDK 1.4<br>4、ojdbc14.jar 支持保存点（Savepoint）<br>5、可以在不同的连接池中使用PreparedStatement，这是重要的性能提升</p>
+<p>从此以后新的jar文件的命名采用 ojdbc<jdk ver="">.jar 格式 ，以前的jar文件名称不变</jdk></p>
+<hr>
+<p>随Oracle 10.2发布的Oracle JDBC驱动10.2版本</p>
+<p>classes12.jar  适用于JDK 1.2 and JDK 1.3.<br>ojdbc14.jar    适用于 JDK 1.4 and 5.0<br><em>*</em>_g.jar 只是用javac -g编译，生成所有调试信息，其它全一样</p>
+<p>特点：<br>1、全面支持JDK 1.5<br>2、支持JDBC 3.0</p>
+<hr>
+<p>随Oracle 11.1发布的Oracle JDBC驱动11.1版本<br>ojdbc5.jar:   适用于jdk5<br>ojdbc6.jar:   适用于jdk6 （如果你使用jdk1.5,就不能使用这个驱动）<br><em>*</em>_g.jar 只是用javac -g编译，生成所有调试信息，其它全一样</p>
+<p>新特性：<br>1、ojdbc6.jar：支持JDK6，支持JDBC 4.0，新的java.sql.SQLXML类型没有被支持。<br>    ojdbc5.jar：全面支持使用JDK5 和 JDBC 3.0 。<br>2、建议使用oracle.jdbc.OracleDriver类，不建议使用oracle.jdbc.driver.OracleDriver。从9.0.1开始的每个release都推荐使用oracle.jdbc。<br>3、j2se 1.2,1.3,1.4不再支持。11R1不再包括这些版本的jar和zip，如果仍然使用这些版本，可以继续使用10gR2的jdbc。<br>4、11gR1 Thin driver支持AES加密算法，SHA1 hash算法，RADIUS, KERBEROS，SSL认证机制.<br>5、支持ANYDATE和ANYTYPE类型。这两种类型自9i引入，11R1前，程序员只能通过PL/SQL操作。<br>6、高级队列支持。11R1提供了访问AQ的高性能接口。<br>7、支持数据库变更通知。<br>8、Thin和OCI的数据库启动和关闭。11R1提供了这样的方法来启动和关闭数据库。<br>9、新的工厂方法。Oracle JDBC 11R1 oracle.jdbc.OracleConnection提供了创建Oracle对象的工厂方法。<br>包括ARRAY, BFILE, DATE, INTERVALDS, NUMBER, STRUCT, TIME,TIMESTAMP,TIMESTAMP等。</p>
+<hr>
+<p>总体讲新版本的JDBC驱动 性能强、很多bug被发现并已解决。<br>我遇到的，之前使用ojdbc14.jar（不记得哪个版本了）批量插入10万条，实际只插入了3万多条，其它的丢失了，换ojdbc6.jar后，一次commit批量插入100万条也OK了。</p>
+<p>尽量使用和数据库版本一致的驱动,有bug时，换高版本的JDBC驱动试试 。</p>
+<p>如果一个jdbc的jar包你不知道是那个版本的,可以解压这个jar包,再META-INF\MANIFEST.MF 文件中找”Oracle JDBC Driver version - 10.1.0.2.0”字样,就知道版本了.</p>
+<p>原文地址：<a href="http://tiantian0521.blog.163.com/blog/static/4172088320117294265766/" target="_blank" rel="external">http://tiantian0521.blog.163.com/blog/static/4172088320117294265766/</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/oracle/">oracle</a>
+  </div>
+
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+        <div class="ds-thread" data-thread-key="2015/06/10/OJDBC版本区别/"></div>
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+
+  
+      <div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123456789012345";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="fb-comments" data-href="http://bettermike.com/2015/06/10/OJDBC版本区别/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+      
+  
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜尋">
+    <input type="hidden" name="q" value="site:bettermike.com">
+  </form>
+</div>
+
+  
+
+  
+<div class="widget tag">
+  <h3 class="title">標籤</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/diary/">diary</a><small>6</small></li>
+  
+    <li><a href="/tags/life/">life</a><small>6</small></li>
+  
+    <li><a href="/tags/oracle/">oracle</a><small>2</small></li>
+  
+    <li><a href="/tags/psychology/">psychology</a><small>1</small></li>
+  
+    <li><a href="/tags/曾国藩/">曾国藩</a><small>1</small></li>
+  
+    <li><a href="/tags/理财/">理财</a><small>1</small></li>
+  
+    <li><a href="/tags/股票/">股票</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 Mike Chen
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"bettermike"};
+        (function() {
+                var ds = document.createElement('script');
+                ds.type = 'text/javascript';ds.async = true;
+                ds.src = 'http://static.duoshuo.com/embed.js';
+                ds.charset = 'UTF-8';
+                (document.getElementsByTagName('head')[0]
+                || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+</script>
+</body>
+</html>

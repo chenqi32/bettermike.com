@@ -145,6 +145,165 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2015-06-09T16:52:11.000Z"><a href="/2015/06/10/OJDBC版本区别/">2015-06-10</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/06/10/OJDBC版本区别/">OJDBC版本区别 [ojdbc14.jar，ojdbc5.jar和ojdbc6.jar的区别]</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>在使用Oracle JDBC驱动时，有些问题你是不是通过替换不同版本的Oracle  JDBC驱动来解决的？最常使用的ojdbc14.jar有多个版本，classes12.jar有多个版本你了解吗？</p>
+<p>连接类型：<br>1、JDBC OCI： oci是oracle call interface的缩写，此驱动类似于传统的ODBC 驱动。因为它需要Oracle Call Interface and Net8，所以它需要在运行使用此驱动的JAVA程序的机器上安装客户端软件，其实主要是用到orcale客户端里以dll方式提供的oci和服务器配 置。<br>2、JDBC Thin： thin是for thin client的意思，这种驱动一般用在运行在WEB浏览器中的JAVA程序。它不是通过OCI or Net8，而是通过Java sockets进行通信，是纯java实现的驱动，因此不需要在使用JDBC Thin的客户端机器上安装orcale客户端软件，所以有很好的移植性，通常用在web开发中。</p>
+<hr>
+<p>随Oracle 8i发布的Oracle JDBC驱动8.1.7版本<br>classes111.zip 适用于JDK 1.1.x<br>classes12.zip  适用于JDK 1.2.x<br>只有zip文件，无jar文件。</p>
+<hr>
+<p>随Oracle 9i发布的Oracle JDBC驱动9.2.0版本</p>
+<p>classes111.jar  适用于JDK 1.1.x<br>classes12.jar   适用于JDK 1.2 and JDK 1.3 （我的项目环境JDK1.6，oracle 10g，windows，用了这个目前没发现问题）<br>ojdbc14.jar     适用于JDK 1.4<br>classes111.zip  适用于JDK 1.1.x<br>classes12.zip   适用于JDK 1.2.x<br><em>*</em>_g.jar 只是用javac -g编译，生成所有调试信息，其它全一样</p>
+<p>新特性：<br>1、Thin连接类型的驱动对BFILE，BLOB，CLOB 提供直接支持，以前通常是调用PL/SQL来实现。<br>2、支持JDBC 3.0 特性<br>3、ojdbc14.jar 支持JDK 1.4<br>4、ojdbc14.jar 支持保存点（Savepoint）<br>5、可以在不同的连接池中使用PreparedStatement，这是重要的性能提升</p>
+<p>从此以后新的jar文件的命名采用 ojdbc<jdk ver="">.jar 格式 ，以前的jar文件名称不变</jdk></p>
+<hr>
+<p>随Oracle 10.2发布的Oracle JDBC驱动10.2版本</p>
+<p>classes12.jar  适用于JDK 1.2 and JDK 1.3.<br>ojdbc14.jar    适用于 JDK 1.4 and 5.0<br><em>*</em>_g.jar 只是用javac -g编译，生成所有调试信息，其它全一样</p>
+<p>特点：<br>1、全面支持JDK 1.5<br>2、支持JDBC 3.0</p>
+<hr>
+<p>随Oracle 11.1发布的Oracle JDBC驱动11.1版本<br>ojdbc5.jar:   适用于jdk5<br>ojdbc6.jar:   适用于jdk6 （如果你使用jdk1.5,就不能使用这个驱动）<br><em>*</em>_g.jar 只是用javac -g编译，生成所有调试信息，其它全一样</p>
+<p>新特性：<br>1、ojdbc6.jar：支持JDK6，支持JDBC 4.0，新的java.sql.SQLXML类型没有被支持。<br>    ojdbc5.jar：全面支持使用JDK5 和 JDBC 3.0 。<br>2、建议使用oracle.jdbc.OracleDriver类，不建议使用oracle.jdbc.driver.OracleDriver。从9.0.1开始的每个release都推荐使用oracle.jdbc。<br>3、j2se 1.2,1.3,1.4不再支持。11R1不再包括这些版本的jar和zip，如果仍然使用这些版本，可以继续使用10gR2的jdbc。<br>4、11gR1 Thin driver支持AES加密算法，SHA1 hash算法，RADIUS, KERBEROS，SSL认证机制.<br>5、支持ANYDATE和ANYTYPE类型。这两种类型自9i引入，11R1前，程序员只能通过PL/SQL操作。<br>6、高级队列支持。11R1提供了访问AQ的高性能接口。<br>7、支持数据库变更通知。<br>8、Thin和OCI的数据库启动和关闭。11R1提供了这样的方法来启动和关闭数据库。<br>9、新的工厂方法。Oracle JDBC 11R1 oracle.jdbc.OracleConnection提供了创建Oracle对象的工厂方法。<br>包括ARRAY, BFILE, DATE, INTERVALDS, NUMBER, STRUCT, TIME,TIMESTAMP,TIMESTAMP等。</p>
+<hr>
+<p>总体讲新版本的JDBC驱动 性能强、很多bug被发现并已解决。<br>我遇到的，之前使用ojdbc14.jar（不记得哪个版本了）批量插入10万条，实际只插入了3万多条，其它的丢失了，换ojdbc6.jar后，一次commit批量插入100万条也OK了。</p>
+<p>尽量使用和数据库版本一致的驱动,有bug时，换高版本的JDBC驱动试试 。</p>
+<p>如果一个jdbc的jar包你不知道是那个版本的,可以解压这个jar包,再META-INF\MANIFEST.MF 文件中找”Oracle JDBC Driver version - 10.1.0.2.0”字样,就知道版本了.</p>
+<p>原文地址：<a href="http://tiantian0521.blog.163.com/blog/static/4172088320117294265766/" target="_blank" rel="external">http://tiantian0521.blog.163.com/blog/static/4172088320117294265766/</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+
+<div class="alignleft">
+ 	<a href="/2015/06/10/OJDBC版本区别/#more" class="more-link">Read More</a>
+</div>
+
+	<a href="/2015/06/10/OJDBC版本区别/" class="ds-thread-count comment-link alignright" data-thread-key="2015/06/10/OJDBC版本区别/" data-count-type="comments"></a>
+
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-06-09T16:52:11.000Z"><a href="/2015/06/10/股票准则/">2015-06-10</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/06/10/股票准则/">炒股准则</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>1.4%的止损<br>2.不左侧抄底<br>3.换手率<4%，不买入 4.外盘低于内盘30%,不买入="" 5.下跌趋势不买入="" 6.长阴不买入="" 7.国家队抄底护盘则买入="" 8.kdj金叉买入="" 9.放量，换手率="">4%买入<br>10.上涨过6%就应该卖出<br>11.成交量下跌就卖出</4%，不买入></p>
+
+      
+    </div>
+    <footer>
+      
+        
+
+<div class="alignleft">
+ 	<a href="/2015/06/10/股票准则/#more" class="more-link">Read More</a>
+</div>
+
+	<a href="/2015/06/10/股票准则/" class="ds-thread-count comment-link alignright" data-thread-key="2015/06/10/股票准则/" data-count-type="comments"></a>
+
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-06-09T16:52:11.000Z"><a href="/2015/06/10/oracle中schema指的是什么/">2015-06-10</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/06/10/oracle中schema指的是什么/">oracle中schema指的是什么？</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>看来有的人还是对schema的真正含义不太理解，现在我再次整理了一下，希望对大家有所帮助。</p>
+<p>我们先来看一下他们的定义：<br>A schema is a collection of database objects (used by a user.).<br>Schema objects are the logical structures that directly refer to the database’s data.<br>A user is a name defined in the database that can connect to and access objects.<br>Schemas and users help database administrators manage database security.</p>
+<p>从定义中我们可以看出schema为数据库对象的集合，为了区分各个集合，我们需要给这个集合起个名字，这些名字就是我们在企业管理器的方案下看到的许多类似用户名的节点，这些类似用户名的节点其实就是一个schema，schema里面包含了各种对象如tables, views, sequences, stored procedures, synonyms, indexes, clusters, and database links。</p>
+<p>一个用户一般对应一个schema,该用户的schema名等于用户名，并作为该用户缺省schema。这也就是我们在企业管理器的方案下看到schema名都为数据库用户名的原因。Oracle数据库中不能新创建一个schema，要想创建一个schema，只能通过创建一个用户的方法解决(Oracle中虽然有create schema语句，但是它并不是用来创建一个schema的)，在创建一个用户的同时为这个用户创建一个与用户名同名的schem并作为该用户的缺省shcema。即schema的个数同user的个数相同，而且schema名字同user名字一一 对应并且相同，所有我们可以称schema为user的别名，虽然这样说并不准确，但是更容易理解一些。</p>
+<p>一个用户有一个缺省的schema，其schema名就等于用户名，当然一个用户还可以使用其他的schema。如果我们访问一个表时，没有指明该表属于哪一个schema中的，系统就会自动给我们在表上加上缺省的sheman名。比如我们在访问数据库时，访问scott用户下的emp表，通过select <em> from emp; 其实，这sql语句的完整写法为select </em> from scott.emp。在数据库中一个对象的完整名称为schema.object，而不属user.object。类似如果我们在创建对象时不指定该对象的schema，在该对象的schema为用户的缺省schema。这就像一个用户有一个缺省的表空间，但是该用户还可以使用其他的表空间，如果我们在创建对象时不指定表空间，则对象存储在缺省表空间中，要想让对象存储在其他表空间中，我们需要在创建对象时指定该对象的表空间。</p>
+<p>咳，说了这么多，给大家举个例子，否则，一切枯燥无味！<br>SQL&gt; Gruant dba to scott</p>
+<p>SQL&gt; create table test(name char(10));<br>Table created.</p>
+<p>SQL&gt; create table system.test(name char(10));<br>Table created.</p>
+<p>SQL&gt; insert into test values(‘scott’);<br>1 row created.</p>
+<p>SQL&gt; insert into system.test values(‘system’);<br>1 row created.</p>
+<p>SQL&gt; commit;<br>Commit complete.</p>
+<p>SQL&gt; conn system/manager<br>Connected.</p>
+<p>SQL&gt; select * from test;</p>
+<h2 id="NAME">NAME</h2><p>system</p>
+<p>SQL&gt; ALTER SESSION SET CURRENT_SCHEMA = scott; —改变用户缺省schema名<br>Session altered.</p>
+<p>SQL&gt; select * from test;</p>
+<h2 id="NAME-1">NAME</h2><p>scott</p>
+<p>SQL&gt; select owner ,table_name from dba_tables where table_name=upper(‘test’);<br>OWNER TABLE_NAME</p>
+<hr>
+<p>SCOTT TEST<br>SYSTEM TEST<br>—上面这个查询就是我说将schema作为user的别名的依据。实际上在使用上，shcema与user完全一样，没有什么区别，在出现schema名的地方也可以出现user名。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+
+<div class="alignleft">
+ 	<a href="/2015/06/10/oracle中schema指的是什么/#more" class="more-link">Read More</a>
+</div>
+
+	<a href="/2015/06/10/oracle中schema指的是什么/" class="ds-thread-count comment-link alignright" data-thread-key="2015/06/10/oracle中schema指的是什么/" data-count-type="comments"></a>
+
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2015-06-08T16:22:16.000Z"><a href="/2015/06/09/Find-a-job/">2015-06-09</a></time>
       
       
@@ -435,9 +594,15 @@
   
     <li><a href="/tags/life/">life</a><small>6</small></li>
   
+    <li><a href="/tags/oracle/">oracle</a><small>2</small></li>
+  
     <li><a href="/tags/psychology/">psychology</a><small>1</small></li>
   
     <li><a href="/tags/曾国藩/">曾国藩</a><small>1</small></li>
+  
+    <li><a href="/tags/理财/">理财</a><small>1</small></li>
+  
+    <li><a href="/tags/股票/">股票</a><small>1</small></li>
   
   </ul>
 </div>
